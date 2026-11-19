@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criando uma Ave</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #e0f7fa;
+    }
+
+    header {
+      background: #087e8b;
+      color: white;
+      padding: 25px;
+    }
+
+    .paisagem {
+      position: relative;
+      height: 430px;
+      overflow: hidden;
+      background: linear-gradient(#70d5f5 70%, #69bd54 70%);
+    }
+
+    .sol {
+      position: absolute;
+      top: 35px;
+      right: 60px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #ffdc42;
+    }
+
+    .nuvem {
+      position: absolute;
+      top: 45px;
+      left: 60px;
+      font-size: 65px;
+    }
+
+    .ave {
+      position: absolute;
+      top: 145px;
+      left: 50%;
+      width: 200px;
+      height: 180px;
+      transform: translateX(-50%);
+      animation: voar 2s ease-in-out infinite;
+    }
+
+    .corpo {
+      position: absolute;
+      top: 40px;
+      left: 10px;
+      width: 145px;
+      height: 120px;
+      border-radius: 50%;
+      background: #168bd2;
+    }
+
+    .cabeca {
+      position: absolute;
+      top: 5px;
+      left: 75px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #168bd2;
+    }
+
+    .asa {
+      position: absolute;
+      top: 95px;
+      left: 35px;
+      width: 80px;
+      height: 55px;
+      border-radius: 50%;
+      background: #0864a5;
+      transform: rotate(-20deg);
+      transform-origin: top right;
+      animation: bater 0.6s ease-in-out infinite alternate;
+    }
+
+    .olho {
+      position: absolute;
+      top: 38px;
+      left: 145px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: black;
+    }
+
+    .bico {
+      position: absolute;
+      top: 55px;
+      left: 170px;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      border-left: 30px solid orange;
+    }
+
+    .pata {
+      position: absolute;
+      top: 155px;
+      left: 75px;
+      width: 7px;
+      height: 30px;
+      background: orange;
+    }
+
+    .pata2 {
+      left: 125px;
+    }
+
+    .galho {
+      position: absolute;
+      top: 335px;
+      left: 50%;
+      width: 300px;
+      height: 13px;
+      border-radius: 20px;
+      background: #80532c;
+      transform: translateX(-50%);
+    }
+
+    footer {
+      padding: 20px;
+      color: #245;
+    }
+
+    @keyframes voar {
+      50% {
+        transform: translate(-50%, -8px);
+      }
+    }
+
+    @keyframes bater {
+      to {
+        transform: rotate(12deg);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .paisagem {
+        height: 400px;
+      }
+
+      .sol {
+        right: 25px;
+      }
+
+      .nuvem {
+        left: 20px;
+        font-size: 50px;
+      }
+
+      .ave {
+        transform: translateX(-50%) scale(0.85);
+      }
+
+      .galho {
+        width: 240px;
+      }
+
+      @keyframes voar {
+        50% {
+          transform: translate(-50%, -8px) scale(0.85);
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>🐦 Criando uma Ave</h1>
+    <p>Projeto de Algoritmos com HTML e CSS</p>
+  </header>
+
+  <main class="paisagem">
+    <div class="sol"></div>
+    <div class="nuvem">☁️</div>
+
+    <div class="ave" aria-label="Uma ave azul">
+      <div class="corpo"></div>
+      <div class="cabeca"></div>
+      <div class="asa"></div>
+      <div class="olho"></div>
+      <div class="bico"></div>
+      <div class="pata"></div>
+      <div class="pata pata2"></div>
+    </div>
+
+    <div class="galho"></div>
+  </main>
+
+  <footer>
+    <h2>Projeto finalizado!</h2>
+    <p>Uma ave criada com criatividade e programação.</p>
+  </footer>
+</body>
+</html>
